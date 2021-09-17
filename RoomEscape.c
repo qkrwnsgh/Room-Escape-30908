@@ -9,39 +9,39 @@
 int Findbucket = FALSE;
 int FindHammer = FALSE;
 int Findknife = FALSE;
-int Findredkey = FALSE; // ¼­¶øÀå ¿­¼è
-int Brokenstatue = FALSE; //¼®»ó ÆÄ¼Õ¿©ºÎ
-int Findofficekey = FALSE; //»ç¹«½Ç ¿­¼è
-int Openoffice = FALSE; // »ç¹«½Ç ¿ÀÇÂ¿©ºÎ 
-int Findguestroomkey = FALSE; //¼Õ´Ô¹æ ¿­¼è
+int Findredkey = FALSE; // ì„œëì¥ ì—´ì‡ 
+int Brokenstatue = FALSE; //ì„ìƒ íŒŒì†ì—¬ë¶€
+int Findofficekey = FALSE; //ì‚¬ë¬´ì‹¤ ì—´ì‡ 
+int Openoffice = FALSE; // ì‚¬ë¬´ì‹¤ ì˜¤í”ˆì—¬ë¶€ 
+int Findguestroomkey = FALSE; //ì†ë‹˜ë°© ì—´ì‡ 
 
 
 
-// 1Ãş
-void livingroom();//°Å½Ç
-void dressroom();//¿Ê¹æ
-void bedroom();//¾È¹æ
-void stairs();//1Ãş °è´Ü
-void door();//Çö°ü
-void kitchen();//ÁÖ¹æ
-void attic();//´Ù¶ô¹æ
+// 1ì¸µ
+void livingroom();//ê±°ì‹¤
+void dressroom();//ì˜·ë°©
+void bedroom();//ì•ˆë°©
+void stairs();//1ì¸µ ê³„ë‹¨
+void door();//í˜„ê´€
+void kitchen();//ì£¼ë°©
+void attic();//ë‹¤ë½ë°©
 
-// 2Ãş
-void corridor(); // º¹µµ
-void library(); // ¼­Àç
-void office(); // »ç¹«½Ç
-void guestroom(); //¼Õ´Ô¹æ
-void washroom(); // È­Àå½Ç
-void statue(); // ¼®»ó
-void steps();// 2Ãş °è´Ü
-void book(); // Ã¥Àå
-void vault(); //±İ°í
+// 2ì¸µ
+void corridor(); // ë³µë„
+void library(); // ì„œì¬
+void office(); // ì‚¬ë¬´ì‹¤
+void guestroom(); //ì†ë‹˜ë°©
+void washroom(); // í™”ì¥ì‹¤
+void statue(); // ì„ìƒ
+void steps();// 2ì¸µ ê³„ë‹¨
+void book(); // ì±…ì¥
+void vault(); //ê¸ˆê³ 
 
 
 
-//¿À·ù¹®
+//ì˜¤ë¥˜ë¬¸
 void error(){
-  printf("ÀÔ·Â¿À·ù");
+  printf("ì…ë ¥ì˜¤ë¥˜");
   system("PAUSE");
 }
 
@@ -51,8 +51,8 @@ int main(void) {
   int menu;
   while(1) {
 		printf("ROOM ESCAPE VER 1.0\n\n");
-		printf("1. ÀÔÀå\n");
-		printf("0. Á¾·á\n");
+		printf("1. ì…ì¥\n");
+		printf("0. ì¢…ë£Œ\n");
 		printf(">> ");
 		scanf("%d", &menu);
 		
@@ -75,16 +75,16 @@ int main(void) {
 void livingroom(){
 	int menu;
 	while(1){
-		printf("[1Ãş °Å½Ç]\n\n");
-    	printf("°Å½Ç¿¡¼­ ÇÒ ¼ö ÀÖ´Â °ÍµéÀ» Ã£¾Æº¸ÀÚ.\n\n");
-    	printf("1. ÀÌµ¿ÇÏ±â\n2. µÑ·¯º¸±â\n");
+		printf("[1ì¸µ ê±°ì‹¤]\n\n");
+    	printf("ê±°ì‹¤ì—ì„œ í•  ìˆ˜ ìˆëŠ” ê²ƒë“¤ì„ ì°¾ì•„ë³´ì.\n\n");
+    	printf("1. ì´ë™í•˜ê¸°\n2. ë‘˜ëŸ¬ë³´ê¸°\n");
     	printf(">> ");
     	scanf("%d",&menu);
 		
 		switch(menu){
 			case 1:
 				while(1){
-					printf("1. ¾È¹æ\n2. ÁÖ¹æ\n3.°è´Ü\n\n");
+					printf("1. ì•ˆë°©\n2. ì£¼ë°©\n3.ê³„ë‹¨\n\n");
       				scanf("%d",&menu);
       				printf(">> ");
 
@@ -99,12 +99,12 @@ void livingroom(){
 							stairs();
 							break;
 						default:
-							printf("ÀÔ·Â¿À·ù");
+							printf("ì…ë ¥ì˜¤ë¥˜");
 								}
 						}
 			case 2:
 				while(1){
-					printf("1. º®³­·Î\n2. Ä«Æê\n3.½Ã°è\n4.¼ö³³Àå\n\n");
+					printf("1. ë²½ë‚œë¡œ\n2. ì¹´í«\n3.ì‹œê³„\n4.ìˆ˜ë‚©ì¥\n\n");
 					scanf("%d",&menu);
       				printf(">> ");
       				
@@ -146,9 +146,9 @@ void steps(){
 int menu;
 while(1) {
   system("cls");
-  printf("[2Ãş °è´Ü]\n\n");
-  printf("º¹µµ·Î ÀÌµ¿ÇÏ½Ã°Ú½À´Ï±î? \n\n");
-  printf("1. ÀÌµ¿ÇÏ±â 2. 1ÃşÀ¸·Î ³»·Á°¡±â");
+  printf("[2ì¸µ ê³„ë‹¨]\n\n");
+  printf("ë³µë„ë¡œ ì´ë™í•˜ì‹œê² ìŠµë‹ˆê¹Œ? \n\n");
+  printf("1. ì´ë™í•˜ê¸° 2. 1ì¸µìœ¼ë¡œ ë‚´ë ¤ê°€ê¸°");
 
   printf(">>");
   scanf("%d",&menu);
@@ -173,9 +173,9 @@ void corridor(){
   int menu;
   while(1) {
     system("cls");
-    printf("[2Ãş º¹µµ]\n\n");
-    printf("º¹µµ¿¡¼­ ÇÒ ¼ö ÀÖ´Â °ÍµéÀ» Ã£¾Æº¸ÀÚ.\n\n");
-    printf("1.ÀÌµ¿ÇÏ±â 2.¼®»ó µÑ·¯º¸±â");
+    printf("[2ì¸µ ë³µë„]\n\n");
+    printf("ë³µë„ì—ì„œ í•  ìˆ˜ ìˆëŠ” ê²ƒë“¤ì„ ì°¾ì•„ë³´ì.\n\n");
+    printf("1.ì´ë™í•˜ê¸° 2.ì„ìƒ ë‘˜ëŸ¬ë³´ê¸°");
 
     printf(">>");
     scanf("%d", &menu);
@@ -184,9 +184,9 @@ void corridor(){
       case 1: 
       while(1) {
         system("cls");
-        printf("[2Ãş º¹µµ]\n\n");
-        printf("¹æÀÌ 3°³°¡ÀÖ´Ù ¾îµğ·Î µé¾î°¡º¼±î?\n\n");
-        printf("1.¼­Àç 2.»ç¹«½Ç 3.¼Õ´Ô¹æ 4.È­Àå½Ç");
+        printf("[2ì¸µ ë³µë„]\n\n");
+        printf("ë°©ì´ 3ê°œê°€ìˆë‹¤ ì–´ë””ë¡œ ë“¤ì–´ê°€ë³¼ê¹Œ?\n\n");
+        printf("1.ì„œì¬ 2.ì‚¬ë¬´ì‹¤ 3.ì†ë‹˜ë°© 4.í™”ì¥ì‹¤");
         
         printf(">>");
         scanf("%d",&menu);
@@ -201,17 +201,17 @@ void corridor(){
           break;
           while(1) {
             if(Findofficekey) {
-              printf("\n¹æ¹®ÀÌ ¿­·È´Ù.\n\n");
+              printf("\në°©ë¬¸ì´ ì—´ë ¸ë‹¤.\n\n");
               office();
               system("pause");
             }
-            printf("\n ¿­¼è°¡ ¾ø½À´Ï´Ù.\n\n");
+            printf("\n ì—´ì‡ ê°€ ì—†ìŠµë‹ˆë‹¤.\n\n");
             corridor();
             system("pause");
           }
           case 3:
           if(Findguestroomkey) {
-            printf("\n¹æ¹®ÀÌ ¿­·È´Ù.\n\n");
+            printf("\në°©ë¬¸ì´ ì—´ë ¸ë‹¤.\n\n");
             guestroom();
             system("pause");
           }
@@ -234,22 +234,22 @@ void statue() {
   int menu;
   while(1) {
   system("cls");
-  printf("[2Ãş º¹µµ]--[¼®»ó]\n\n");
-  printf("¾î´À°É ÇÏ½Ã°Ú½À´Ï±î? \n\n");
-  printf("1. µÑ·¯º¸±â 2. ÆÄ±«ÇÏ±â 3.µ¹¾Æ°¡±â");
+  printf("[2ì¸µ ë³µë„]--[ì„ìƒ]\n\n");
+  printf("ì–´ëŠê±¸ í•˜ì‹œê² ìŠµë‹ˆê¹Œ? \n\n");
+  printf("1. ë‘˜ëŸ¬ë³´ê¸° 2. íŒŒê´´í•˜ê¸° 3.ëŒì•„ê°€ê¸°");
 
   printf(">>");
   scanf("%d",&menu);
   switch(menu){
     case 1:
               if(Brokenstatue) {
-                printf("\n¼®»óÀº ÀÌ¹Ì ºÎ½¤Á®ÀÖ´Ù. \n\n");
-                printf("´õÀÌ»ó ¾òÀ»°ÍÀº ¾ø¾îº¸ÀÎ´Ù.\n");
+                printf("\nì„ìƒì€ ì´ë¯¸ ë¶€ìˆ´ì ¸ìˆë‹¤. \n\n");
+                printf("ë”ì´ìƒ ì–»ì„ê²ƒì€ ì—†ì–´ë³´ì¸ë‹¤.\n");
                 system("pause");
                 statue();
                 
               } else {
-              	printf("\n ÀÌ°É ¸Ç¼ÕÀ¸·Î ºÎ½Ã¶ó°í??\n\n");
+              	printf("\n ì´ê±¸ ë§¨ì†ìœ¼ë¡œ ë¶€ì‹œë¼ê³ ??\n\n");
               	system("pause");
               	statue();
 			  }
@@ -257,12 +257,12 @@ void statue() {
               if(FindHammer) {
                 Findredkey = TRUE;
                 Brokenstatue = TRUE;
-                printf("\nºÎ½¤Áø ¼®»ó¾È¿¡¼­ ¿­¼è¸¦ Ã£¾Ò´Ù.\n");
-                printf("\n¾îµğ¿¡ ¾²ÀÌ´Â ¿­¼èÁö...?\n");		
+                printf("\në¶€ìˆ´ì§„ ì„ìƒì•ˆì—ì„œ ì—´ì‡ ë¥¼ ì°¾ì•˜ë‹¤.\n");
+                printf("\nì–´ë””ì— ì“°ì´ëŠ” ì—´ì‡ ì§€...?\n");		
                 system("pause");
               	statue();
               } else {
-                printf("\n¼®»óÀÌ ¹«°Å¿ö¼­ µé¼ö´Â ¾øÀ»°Í °°´Ù.\n\n");
+                printf("\nì„ìƒì´ ë¬´ê±°ì›Œì„œ ë“¤ìˆ˜ëŠ” ì—†ì„ê²ƒ ê°™ë‹¤.\n\n");
                 system("pause");
               	statue();
               }
@@ -276,14 +276,14 @@ void statue() {
         }
       } 
 
-      //¼­Àç 
+      //ì„œì¬ 
     void library() {
       int menu;
       while(1) {
         system("cls");
-        printf("\n[2Ãş º¹µµ]--[¼­Àç]\n\n");
-        printf("\n¼­Àç¿¡¼­ ¹» ÇØº¼±î??\n\n");
-        printf("1.Ã¥Àå »ìÆìº¸±â 2.µÑ·¯º¸±â");
+        printf("\n[2ì¸µ ë³µë„]--[ì„œì¬]\n\n");
+        printf("\nì„œì¬ì—ì„œ ë­˜ í•´ë³¼ê¹Œ??\n\n");
+        printf("1.ì±…ì¥ ì‚´í´ë³´ê¸° 2.ë‘˜ëŸ¬ë³´ê¸°");
 
         printf(">>");
         scanf("%d",&menu);
@@ -293,7 +293,7 @@ void statue() {
             break;
 
           case 2:
-            printf("\n±¸¼®ÂÊ¿¡ ±İ°í°¡ º¸ÀÎ´Ù\n\n");
+            printf("\nêµ¬ì„ìª½ì— ê¸ˆê³ ê°€ ë³´ì¸ë‹¤\n\n");
             system("pause");
             void vault();
 
@@ -308,8 +308,8 @@ void statue() {
       int menu;
       while(1) {
         system("cls");
-        printf("\n[2Ãş º¹µµ]--[¼­Àç]--[Ã¥Àå]\n\n");
-        printf("\nÃ¥Àå¿¡¼­ ¹«¾ùÀ»ÇÒ±î?\n\n");
+        printf("\n[2ì¸µ ë³µë„]--[ì„œì¬]--[ì±…ì¥]\n\n");
+        printf("\nì±…ì¥ì—ì„œ ë¬´ì—‡ì„í• ê¹Œ?\n\n");
         pritnf("1.")
       }
     }
@@ -317,15 +317,15 @@ void statue() {
       int menu(1) {
         while(1) {
           system("cls");
-          printf("\n[2Ãş º¹µµ]--[¼­Àç]--[±İ°í]\n\n");
-          printf("\n±İ°í¿¡ ºñ¹Ğ¹øÈ£°¡ ¹»±î??\n\n");
-          printf("1.ºÎ¼ø´Ù 2.ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÑ´Ù. 3.¸»À»°É¾îº»´Ù. 4.¼­Àç·Î µ¹¾Æ°£´Ù.");
+          printf("\n[2ì¸µ ë³µë„]--[ì„œì¬]--[ê¸ˆê³ ]\n\n");
+          printf("\nê¸ˆê³ ì— ë¹„ë°€ë²ˆí˜¸ê°€ ë­˜ê¹Œ??\n\n");
+          printf("1.ë¶€ìˆœë‹¤ 2.ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•œë‹¤. 3.ë§ì„ê±¸ì–´ë³¸ë‹¤. 4.ì„œì¬ë¡œ ëŒì•„ê°„ë‹¤.");
 
           printf(">>");
           scanf("%d",&menu);
           switch(menu){
             case 1: 
-            printf("\nºÎ¼ö±â¿£ ³Ê¹« ´Ü´ÜÇÏ´Ù.\n\n");
+            printf("\në¶€ìˆ˜ê¸°ì—” ë„ˆë¬´ ë‹¨ë‹¨í•˜ë‹¤.\n\n");
             system("pause");
             void vault();
 
@@ -333,7 +333,7 @@ void statue() {
             
 
             case 3:
-            printf("\n³Ê¹« ¿À·¡°¤ÇôÀÖ¾î¼­ ±×·±Áö Àá½Ã ¹ÌÃÆ¾ú³ªºÁ...\n\n"");
+            printf("\në„ˆë¬´ ì˜¤ë˜ê°‡í˜€ìˆì–´ì„œ ê·¸ëŸ°ì§€ ì ì‹œ ë¯¸ì³¤ì—ˆë‚˜ë´...\n\n"");
             system("pause");
             void vault();
 
@@ -345,4 +345,3 @@ void statue() {
       }
     }
 }
-
